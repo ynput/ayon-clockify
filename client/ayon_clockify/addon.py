@@ -19,7 +19,7 @@ class ClockifyAddon(AYONAddon, ITrayAddon, IPluginPaths):
             clockify_settings = studio_settings[self.name]
             workspace_name = clockify_settings["workspace_name"]
 
-        if enabled and workspace_name:
+        if enabled and not workspace_name:
             self.log.warning("Clockify Workspace is not set in settings.")
             enabled = False
         self.enabled = enabled
